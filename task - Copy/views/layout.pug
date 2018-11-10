@@ -1,0 +1,26 @@
+html
+  head
+    meta(charset='utf-8')
+    title video annotation
+    meta(name='viewport' content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous")
+    link(href="https://fonts.googleapis.com/css?family=Nova+Flat" rel="stylesheet")
+    link(rel='shortcut icon' href='/favicon.png')
+    link(rel='stylesheet' href='/style/layout.css')
+  body
+    ul#navbar
+      li
+        a(href='/') home
+          //i(class="fas fa-home")
+      if(session.user)
+        li
+          a(href='/logout') Logout
+            //i(class="fas fa-sign-out-alt")
+      else
+        li
+          a(href='/login') Login
+        li
+          a(href='/register') Register
+    block content
+  script(src='/js/jquery.js')

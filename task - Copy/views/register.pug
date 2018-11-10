@@ -1,0 +1,39 @@
+extends layout
+block content
+  link(rel='stylesheet' href='/style/register.css')
+  if(exits)
+    div#exists #{exits}
+  if(errs)
+    div#errors
+      each err in errs
+        div#err= err.msg
+  section#register
+    h2 Register
+    form(method="POST" enctype="multipart/form-data")
+      
+      label username*
+      input(type='text' name='username')
+        
+      label email*
+      input(type='text' name='email')
+        
+      label password*
+      input(type='password' name='password')
+        
+      label confirm password
+      input(type='password' name='password2' )
+      
+      label(for='img' id='forimg') choose an image
+      input(type='file' name='image' accept='image/*' id='img')
+      
+      input(type="submit" value="register")
+  script.
+    var img = document.getElementById('img'),
+        forimg = document.getElementById('forimg');
+    img.onchange = function(){
+      if(img.value.length > 20){
+        forimg.textContent = img.value.slice(0,20) + '...';
+      } else {
+        forimg.textContent = img.value
+      }
+    }

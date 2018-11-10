@@ -1,0 +1,18 @@
+extends layout
+block content
+  link(rel='stylesheet' href='/style/main.css')
+  section#vidandcom
+    video(src='/uploads/video/node.js.mp4' id='myvideo' controls)
+    div#commentscontainer
+      ul#comments
+      form(method='POST' id='urComment')
+        textarea(placeholder='ur comment' name='comment' id='commentbody' required)
+        input(type='hidden' name='user' id='user' value=session.user._id)
+        input(type='hidden' name='time' id='time')
+        input(type='submit' value='post')
+  
+  section#details
+    //h2 comment
+    ul#allComment click any comment to see the all comment...
+  script(src='/js/jquery.js')
+  script(src='/js/main.js')

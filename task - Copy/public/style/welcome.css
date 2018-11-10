@@ -1,0 +1,12 @@
+#welcome{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 30px;
+  color: #0080aa;
+  padding: 20px;
+  line-height: 2em;
+  text-align: center
+}
